@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator - Touseef Malik</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="profile">
+      <img src="https://i.postimg.cc/Kzrm2mJy/558094692-787841107555093-6027457938418604754-n.jpg" alt="Touseef Malik" class="avatar">
+      <div>
+        <h1>Touseef Malik</h1>
+        <p class="subtitle">QR Code Generator By Touseef Malik</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label>Text / URL:
+        <textarea id="text" placeholder="Enter text or link..."></textarea>
+      </label>
+
+      <div class="row">
+        <label>Size:
+          <input id="size" type="number" min="100" max="1000" value="300">
+        </label>
+        <label>Dark:
+          <input id="dark" type="color" value="#000000">
+        </label>
+        <label>Light:
+          <input id="light" type="color" value="#ffffff">
+        </label>
+      </div>
+
+      <label>Error Correction:
+        <select id="errorLevel">
+          <option value="L">L - Low (7%)</option>
+          <option value="M" selected>M - Medium (15%)</option>
+          <option value="Q">Q - Quality (25%)</option>
+          <option value="H">H - High (30%)</option>
+        </select>
+      </label>
+
+      <label>Upload Logo (optional):
+        <input id="logo" type="file" accept="image/*">
+      </label>
+
+      <div class="buttons">
+        <button id="generate">Generate QR</button>
+        <button id="clear" class="secondary">Clear</button>
+        <button id="print" class="secondary">Print</button>
+        <a id="downloadPNG" class="secondary" download="qrcode.png">Download PNG</a>
+        <a id="downloadSVG" class="secondary" download="qrcode.svg">Download SVG</a>
+      </div>
+    </section>
+
+    <section class="preview">
+      <div class="qr-box">
+        <canvas id="qrCanvas"></canvas>
+        <p id="qrInfo">QR will appear here</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>designed and power by <strong>Touseef Malik</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
